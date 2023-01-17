@@ -1,8 +1,12 @@
-<div *ngFor="let armor of armors" class="itemList">
-    <p>Name: {{armor.name}} HunterRank: {{armor.rank}}</p>
-    Slots: <span *ngFor="let slot of armor.slots">
+<div *ngFor="let armor of armors" class="itemList" [class.itemSelected]="armor===selectedArmor"
+  (click)="changeSelected(armor)">
+  <img [src]="setIcon(armor.type)" class="itemIcon">
+  <div class="itemData">
+    <div>Name: {{armor.name}}</div>
+    <div>HunterRank: {{armor.rank}}</div>
+    <div class="slotsContainer">Slots: <div *ngFor="let slot of armor.slots" class="itemSlots">
         {{slot.size}}
-    </span>
+      </div>
+    </div>
+  </div>
 </div>
-
-<input type="button" value="Filtrar por rango" (click)="filterByRank('MR')">
