@@ -1,0 +1,8 @@
+<div *ngFor="let armor of armors" class="itemList">
+    <p>Name: {{armor.name}} HunterRank: {{armor.rank}}</p>
+    Slots: <span *ngFor="let slot of armor.slots">
+        {{slot.size}}
+    </span>
+</div>
+
+<input type="button" value="Filtrar por rango" (click)="filterByRank('MR')">
