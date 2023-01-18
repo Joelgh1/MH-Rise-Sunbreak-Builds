@@ -26,7 +26,11 @@ export class ArmorListComponent implements OnInit {
   }
 
   changeSelected(armor: Armor) {
-    this.selectedArmor = armor
+    if(this.selectedArmor === armor){
+      this.selectedArmor = undefined
+    }else{
+      this.selectedArmor = armor
+    }
   }
 
   setIcon(armorType: string): string {
