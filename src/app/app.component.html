@@ -1,5 +1,5 @@
 <div class="armorContainer">
-    <app-armor-list class="armorList"></app-armor-list>
-    <app-armor-selector class="armorSelector"></app-armor-selector>
-    <div class="buildSkills"></div>
+  <app-armor-list class="armorList" [equipmentFilter]="equipmentFilter"></app-armor-list>
+  <app-armor-selector class="armorSelector" (selectedSlot)="setFilter($event)"></app-armor-selector>
+  <div class="buildSkills"></div>
 </div>

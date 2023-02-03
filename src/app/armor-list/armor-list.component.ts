@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Armor } from '../armor';
 import { ArmorServiceService } from '../armor-service.service';
 
@@ -10,6 +10,7 @@ import { ArmorServiceService } from '../armor-service.service';
 export class ArmorListComponent implements OnInit {
   armors: Armor[] = []
   selectedArmor?: Armor
+  @Input() equipmentFilter?: string
 
   constructor(private armorService: ArmorServiceService) { }
 
@@ -26,9 +27,9 @@ export class ArmorListComponent implements OnInit {
   }
 
   changeSelected(armor: Armor) {
-    if(this.selectedArmor === armor){
+    if (this.selectedArmor === armor) {
       this.selectedArmor = undefined
-    }else{
+    } else {
       this.selectedArmor = armor
     }
   }
